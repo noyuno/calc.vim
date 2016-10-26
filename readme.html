@@ -1,0 +1,55 @@
+<h1 id="calc.vim">calc.vim</h1>
+<table>
+<thead>
+<tr class="header">
+<th align="left">equation</th>
+<th align="left">answer</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">3+12/6</td>
+<td align="left">= 3+12/6</td>
+</tr>
+<tr class="even">
+<td align="left">2^32-1</td>
+<td align="left">= 2^32-1</td>
+</tr>
+<tr class="odd">
+<td align="left">100/0</td>
+<td align="left">= 100/0</td>
+</tr>
+</tbody>
+</table>
+<p>becomes</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">equation</th>
+<th align="left">answer</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">3+12/6</td>
+<td align="left">5.00</td>
+</tr>
+<tr class="even">
+<td align="left">2^32-1</td>
+<td align="left">4294967295</td>
+</tr>
+<tr class="odd">
+<td align="left">100/0</td>
+<td align="left">Runtime error (func=(main), adr=14): Divide by zero</td>
+</tr>
+</tbody>
+</table>
+<h2 id="requires">Requires</h2>
+<pre><code>bc</code></pre>
+<h2 id="usage">Usage</h2>
+<p>Write table</p>
+<pre><code>| 3+12/6 = | = 3+12/6 |
+| 2^32-1 = | = 2^32-1 |
+| 100/0 = | = 100/0 |</code></pre>
+<p>Set cursor to the table, and run</p>
+<pre><code>:Calculate</code></pre>
