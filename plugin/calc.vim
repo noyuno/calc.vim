@@ -1,3 +1,4 @@
+let g:dfbcpath = fnamemodify(expand('<sfile>'), ':h').'/dfbc'
 
 function! s:CalculateCell(cell)
     if a:cell !~ '^\s*='
@@ -6,7 +7,7 @@ function! s:CalculateCell(cell)
     
     let l:data = substitute(a:cell, "'", '', "g")
     let l:data = substitute(l:data, '^\s*=', "", "")
-    let l:stdout = system('dfbc scale=2\; ''' . l:data . "'")
+    let l:stdout = system(g:dfbcpath . ' scale=2\; ''' . l:data . "'")
     let l:stdout = substitute(l:stdout, '^\.', "0.", "")
     let l:stdout = substitute(l:stdout, "\n", "", "")
     let l:ret = v:shell_error
@@ -57,14 +58,16 @@ function! s:CalculateTable(fretrow)
     let l:nrow = l:frow
     let l:retrows = range(l:erow - l:frow + 1)
     
-    " debug
-    " echo "l:nrow = " . l:nrow . ",  l:erow = " . l:erow
     while l:nrow <= l:erow
         let l:retrows[l:nrow - l:frow] = s:CalculateLine(getline(l:nrow))
         let l:nrow += 1
     endwhile
     
-    call append(a:fretrow+l:erow, l:retrows)
+    while line('$') < a:fretrow + l:erow
+        call append(line('$'), "")
+    endwhile
+
+    call append(a:fretrow + l:erow, l:retrows)
 endfunction
 
 command! -nargs=0 Calculate call s:CalculateTable(1)
