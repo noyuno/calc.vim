@@ -20,11 +20,13 @@ becomes
 
 ## Usage
 
-Write table
+Write Markdown style table
     
-    | 3+12/6 = | = 3+12/6 |
-    | 2^32-1 = | = 2^32-1 |
-    | 100/0 = | = 100/0 |
+    |equation|answer|
+    |---|---|
+    | 3+12/6 | = 3+12/6 |
+    | 2^32-1 | = 2^32-1 |
+    | 100/0 | = 100/0 |
 
 Set cursor to the table, and run 
     
