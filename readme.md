@@ -5,6 +5,7 @@
 | 3+12/6 | = 3+12/6 |
 | 2^32-1 | = 2^32-1 |
 | 100/0 | = 100/0 |
+| sin(pi/4) | =scale=4;s(a(1)) |
 
 becomes
 
@@ -13,6 +14,7 @@ becomes
 | 3+12/6 | 5.00 |
 | 2^32-1 | 4294967295 |
 | 100/0 | Runtime error (func=(main), adr=14): Divide by zero |
+| sin(pi/4) | 0.7070 |
 
 ## Requires
     
@@ -27,6 +29,7 @@ Write Markdown style table
     | 3+12/6 | = 3+12/6 |
     | 2^32-1 | = 2^32-1 |
     | 100/0 | = 100/0 |
+    | sin(pi/4) | =scale=4;s(a(1)) |
 
 Set cursor to the table, and run 
     
