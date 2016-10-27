@@ -27,7 +27,7 @@ Write Markdown style table
     | equation  | answer           |
     | ---       | ---              |
     | 3+12/6    | = 3+12/6         |
-    | 2^32-1    | = 2^32-1         |
+    | 2^32-1    | =obase=16;2^64-1 |
     | 100/0     | = 100/0          |
     | sin(pi/4) | =scale=4;s(a(1)) |
 
