@@ -18,7 +18,6 @@ function! s:CalculateCell(cell)
 endfunction
 
 function! s:CalculateLine(line)
-    "execute "read ! echo '" . a:line . "' | bc"
     let l:cells = split(a:line, "|")
     let l:retcells = ""
     for cell in cells
